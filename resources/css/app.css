@@ -2,4 +2,58 @@
 
 @theme {
     --font-sans: "Inter Variable", sans-serif;
+    --color-base-100: var(--base-100);
+    --color-base-200: var(--base-200);
+    --color-base-300: var(--base-300);
+    --color-base-400: var(--base-400);
+    --color-base-500: var(--base-500);
+
+    --color-primary-light: var(--primary-light);
+    --color-primary: var(--primary);
+    --color-primary-hover: var(--primary-hover);
+
+    --color-content: var(--content);
+    --color-content-muted: var(--content-muted);
+
+    --color-success: var(--success);
+    --color-error: var(--error);
+    --color-warning: var(--warning);
+    --color-info: var(--info);
+}
+
+:root {
+    --base-100: #f3f4f6;
+    --base-200: #ffffff;
+    --base-300: #f9fafb;
+
+    --base-400: #e5e7eb;
+    --base-500: #d1d5db;
+
+    --primary-light: #7068fa;
+    --primary: #5850ec;
+    --primary-hover: #4338ca;
+
+    --content: #111827;
+    --content-muted: #6b7280;
+
+    --success: #059669;
+    --error: #dc2626;
+    --warning: #d97706;
+    --info: #2563eb;
+}
+.dark {
+    --base-100: #050511;
+    --base-200: #0d0e1e;
+    --base-300: #18192f;
+
+    --base-400: #282a44;
+    --base-500: #3b3d5a;
+
+    --content: #ffffff;
+    --content-muted: #8b92a5;
+
+    --success: #10b981;
+    --error: #ef4444;
+    --warning: #fbbf24;
+    --info: #3b82f6;
 }
