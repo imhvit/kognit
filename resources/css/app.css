@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
     --font-sans: "Inter Variable", sans-serif;
     --color-base-100: var(--base-100);
@@ -22,38 +24,44 @@
 }
 
 :root {
-    --base-100: #f3f4f6;
-    --base-200: #ffffff;
-    --base-300: #f9fafb;
+    --base-100: oklch(95.5% 0.008 264.792);
+    --base-200: oklch(100% 0 0);
+    --base-300: oklch(93.5% 0.012 264.792);
 
-    --base-400: #e5e7eb;
-    --base-500: #d1d5db;
+    --base-400: oklch(86.5% 0.015 264.656);
+    --base-500: oklch(76% 0.02 258.479);
 
-    --primary-light: #7068fa;
-    --primary: #5850ec;
-    --primary-hover: #4338ca;
+    --primary-light: oklch(60.462% 0.21077 280.498);
+    --primary: oklch(53.788% 0.22599 277.894);
+    --primary-hover: oklch(45.678% 0.21466 277.034);
 
-    --content: #111827;
-    --content-muted: #6b7280;
+    --content: oklch(21.009% 0.03179 264.678);
+    --content-muted: oklch(48.5% 0.025 264.389);
 
-    --success: #059669;
-    --error: #dc2626;
-    --warning: #d97706;
-    --info: #2563eb;
+    --success: oklch(59.598% 0.12741 163.254);
+    --error: oklch(57.707% 0.21516 27.312);
+    --warning: oklch(66.583% 0.15738 58.309);
+    --info: oklch(54.616% 0.21529 262.896);
 }
+
 .dark {
-    --base-100: #050511;
-    --base-200: #0d0e1e;
-    --base-300: #18192f;
+    --base-100: oklch(12.387% 0.02892 281.33);
+    --base-200: oklch(17.215% 0.03311 279.598);
+    --base-300: oklch(22.455% 0.04255 280.411);
 
-    --base-400: #282a44;
-    --base-500: #3b3d5a;
+    --base-400: oklch(29.588% 0.0472 279.726);
+    --base-500: oklch(37.113% 0.04977 280.633);
 
-    --content: #ffffff;
-    --content-muted: #8b92a5;
+    --content: oklch(100% 0.00011 271.152);
+    --content-muted: oklch(66.061% 0.02941 269.519);
 
-    --success: #10b981;
-    --error: #ef4444;
-    --warning: #fbbf24;
-    --info: #3b82f6;
+    --success: oklch(69.588% 0.14907 162.508);
+    --error: oklch(63.681% 0.20784 25.315);
+    --warning: oklch(83.685% 0.16435 84.431);
+    --info: oklch(62.31% 0.1881 259.83);
+}
+
+::selection {
+    background-color: var(--primary);
+    color: oklch(100% 0.00011 271.152);
 }

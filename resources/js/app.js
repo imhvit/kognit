@@ -6,7 +6,7 @@ import AuthLayout from "@/layouts/AuthLayout.vue";
 const appName = import.meta.env.VITE_APP_NAME || "Kognit";
 
 createInertiaApp({
-    title: (title) => (title ? title : appName),
+    title: (title) => (title ? `${title} - Kognit` : appName),
     layout: (name) => {
         switch (true) {
             case name === "Welcome":
@@ -18,6 +18,6 @@ createInertiaApp({
         }
     },
     progress: {
-        color: "#3b82f6",
+        color: "#5850ec",
     },
 });
