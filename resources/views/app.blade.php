@@ -33,7 +33,7 @@
 
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-
+    @routes
     @vite(['resources/css/app.css', 'resources/js/app.js', "resources/js/pages/{$page['component']}.vue"])
     <x-inertia::head>
         <title>{{ config('app.name', 'Kognit') }}</title>
