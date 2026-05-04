@@ -59,6 +59,8 @@
     --error: oklch(63.681% 0.20784 25.315);
     --warning: oklch(83.685% 0.16435 84.431);
     --info: oklch(62.31% 0.1881 259.83);
+
+    color-scheme: dark;
 }
 
 ::selection {
