@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Illuminate\Http\Request;
 use Inertia\Middleware;
+use Tighten\Ziggy\Ziggy;
 
 class HandleInertiaRequests extends Middleware
 {
@@ -35,12 +36,20 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request): array
     {
+        $user = $request->user();
         return [
             ...parent::share($request),
             'name' => config('app.name'),
             'auth' => [
-                'user' => $request->user()?->only('id', 'name', 'email'),
+                'user' => $user?->only('id', 'name', 'email'),
+                'roles' => $user ? $user->roles->pluck('name') : [],
+                'permissions' => $user ? $user->getAllPermissions()->pluck('name') : [],
             ],
+            'ziggy' => [
+                ...(new Ziggy)->toArray(),
+                'location' => $request->url(),
+            ],
+            'sidebarOpen' => ! $request->hasCookie('sidebar_state') || $request->cookie('sidebar_state') === 'true',
         ];
     }
 }
