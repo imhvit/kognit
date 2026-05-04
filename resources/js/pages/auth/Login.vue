@@ -15,13 +15,6 @@ const isFormValid = computed(() => {
     return !!(form.email?.trim() && form.password?.trim());
 });
 
-defineOptions({
-    layout: {
-        title: "Acceder a Kognit",
-        description: "Bienvenido a Kognit, por favor completa los campos"
-    }
-});
-
 const handleLogin = () => {
     if (form.processing) return;
 
