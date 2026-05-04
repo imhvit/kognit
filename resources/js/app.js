@@ -11,21 +11,7 @@ createInertiaApp({
     title: (title) => (title ? `${title} - Kognit` : appName),
     resolve: (name) => {
         const pages = import.meta.glob("./pages/**/*.vue", { eager: true });
-        let page = pages[`./pages/${name}.vue`].default;
-
-        const layout = page.layout;
-
-        if (layout === undefined) {
-            if (name === "Welcome") {
-                page.layout = null;
-            } else if (name.startsWith("auth/")) {
-                page.layout = AuthLayout;
-            } else {
-                page.layout = AppLayout;
-            }
-        }
-
-        return page;
+        return pages[`./pages/${name}.vue`].default;
     },
     setup({ el, App, props, plugin }) {
         const app = createSSRApp({ render: () => h(App, props) });
