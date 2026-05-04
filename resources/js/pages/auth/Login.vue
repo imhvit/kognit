@@ -2,6 +2,7 @@
 import GoogleIcon from '@/icons/Google.vue';
 import Loader from '@/icons/Loader.vue';
 import MicrosoftIcon from '@/icons/Microsoft.vue';
+import AuthLayout from '@/layouts/AuthLayout.vue';
 import { Head, useForm } from '@inertiajs/vue3';
 import { computed } from 'vue';
 
@@ -32,9 +33,9 @@ const handleLogin = () => {
 </script>
 
 <template>
-    <div>
 
-        <Head title="Iniciar sesión" description="Bienvenido a Kognit, por favor completa los campos" />
+    <Head title="Iniciar sesión" description="Bienvenido a Kognit, por favor completa los campos" />
+    <AuthLayout title="Acceder a Kognit" description="Bienvenido a Kognit, por favor completa los campos">
         <div class="flex flex-col gap-y-4">
             <button disabled
                 class="flex items-center justify-center px-2 py-2.5 text-sm gap-x-2 bg-base-300 cursor-pointer rounded-md disabled:opacity-50 disabled:cursor-not-allowed disabled:text-content-muted">
@@ -74,5 +75,5 @@ const handleLogin = () => {
                 <span :class="{ 'opacity-0': form.processing, 'opacity-100': !form.processing }">Continuar</span>
             </button>
         </form>
-    </div>
+    </AuthLayout>
 </template>
