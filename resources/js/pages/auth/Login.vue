@@ -1,7 +1,5 @@
 <script setup>
-import GoogleIcon from '@/icons/Google.vue';
-import Loader from '@/icons/Loader.vue';
-import MicrosoftIcon from '@/icons/Microsoft.vue';
+import { GoogleIcon, MicrosoftIcon, LoaderIcon } from '@/icons';
 import AuthLayout from '@/layouts/AuthLayout.vue';
 import { Head, useForm } from '@inertiajs/vue3';
 import { computed } from 'vue';
@@ -70,7 +68,7 @@ const handleLogin = () => {
             </div>
             <button type="submit" :disabled="!isFormValid || form.processing"
                 class="flex items-center justify-center w-full px-4 py-2 text-sm text-white border border-transparent rounded-md outline-none cursor-pointer bg-primary disabled:opacity-50 focus-visible:ring-offset-2 focus-visible:ring-offset-base-100 focus-visible:ring-3 focus-visible:ring-primary dark:text-content disabled:cursor-not-allowed">
-                <Loader class="absolute size-4 animate-spin"
+                <LoaderIcon class="absolute size-4 animate-spin"
                     :class="{ 'opacity-100': form.processing, 'opacity-0': !form.processing }" />
                 <span :class="{ 'opacity-0': form.processing, 'opacity-100': !form.processing }">Continuar</span>
             </button>
