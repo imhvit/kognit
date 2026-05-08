@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="public/kognit-logo.webp" width="600" alt="Kognit Logo">
+  <img src="public/kognit-banner.webp" width="600" alt="Kognit Logo">
 </p>
 
 <p align="center">
