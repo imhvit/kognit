@@ -23,6 +23,7 @@
         html {
             background-color: var(--color-base-100);
             color: var(--color-content);
+            overflow-x: hidden;
         }
 
         html.dark {
@@ -42,6 +43,15 @@
 
 <body class="font-sans">
     <x-inertia::app />
+    <button class="fixed p-2 border rounded-full cursor-pointer bg-primary border-primary-light right-4 bottom-4" id="change-theme">🎨</button>
+
+    <script>
+        const btnTheme = document.getElementById('change-theme');
+
+        btnTheme.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+    </script>
 </body>
 
 </html>
